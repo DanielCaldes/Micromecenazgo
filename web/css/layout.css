@@ -4,7 +4,7 @@
 
 /* Header */
 header {
-    text-align: center;
+    text-align: left;
     background-color: var(--light-gray);
     color: var(--black);
     padding: 10px;
@@ -25,11 +25,16 @@ header {
     font-weight: bold;
 }
 
+.tagline{
+    text-align: center;
+}
+
 .header-info {
     display: flex;
     gap: 35px;
     justify-content: center;
     margin: 15px;
+    margin-top: 20px;
     flex-wrap: wrap;
 }
 
