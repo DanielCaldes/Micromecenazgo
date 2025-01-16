@@ -1,0 +1,109 @@
+/* =========================================
+   Diseño general y estructuración de la página
+   ========================================= */
+
+/* Header */
+header {
+    text-align: center;
+    background-color: var(--light-gray);
+    color: var(--black);
+    padding: 10px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 5px;
+    margin: 0 auto;
+    padding-top: 30px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.subtitle{
+    font-weight: bold;
+}
+
+.header-info {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    margin: 15px;
+    flex-wrap: wrap;
+}
+
+.header-item,figure {
+    max-width: 1000px;
+    min-width: 300px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+/* Navigation */
+nav {
+    margin: 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    text-align: center;
+    padding: 25px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navigation a{
+    color: var(--black);
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color:var(--primary)
+}
+
+/* Main Content */
+main {
+    position: relative;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+article{
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer, footer nav, footer nav ul {
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0;
+    margin: 0;
+}
+
+footer{
+    padding: 20px;
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    list-style: none;
+}

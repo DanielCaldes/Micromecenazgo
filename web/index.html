@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Etiquetas para mejorar el SEO -->
+    <meta name="description" content="Slide & Smash: Un videojuego roguelike emocionante para Steam. Descubre nuestra campaña y únete como patrocinador.">
+    <meta name="keywords" content="videojuego, roguelike, Steam, campaña, crowdfunding">
+    <meta name="author" content="Infierno Games">
+    <!-- Titulo y favicon -->
+    <title>Slide & Smash</title>
+    <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+    <!-- Enlaces a los estilos css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Sección: Información general del proyecto -->
+    <header>
+        <div class="title-container">
+            <h1>Slide & Smash</h1>
+            <p>by <span class = "subtitle">Infierno Games</span></p>
+        </div>
+        <p class="tagline">Un videojuego roguelike para Steam</p>
+        <div class="header-info">
+            <div class="header-item carousel-container">
+                <div class="carousel">
+                    <img src="src/game-sketch.png" alt="Imagen 1" class="carousel-item">
+                    <img src="src/game-sketch.png" alt="Imagen 2" class="carousel-item">
+                    <img src="src/game-sketch.png" alt="Imagen 3" class="carousel-item">
+                </div>
+                <button class="carousel-button carousel-button--prev" aria-label="Anterior">&#10094;</button>
+                <button class="carousel-button carousel-button--next" aria-label="Siguiente">&#10095;</button>
+            </div>
+            <div class="header-item">
+                <div class = "progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <div>
+                    <p class="highlight highlight--green">10.499€</p>
+                    <p class="complement-data">contribuido de 9.567€</p>
+                </div>
+                <div>
+                    <p class="highlight highlight--gray">360</p>
+                    <p class="complement-data">patrocinadores</p>
+                </div>
+                <div class = "countdown">
+                    <div class="countdown-item">
+                        <p id="countdown-timer-days" class="highlight highlight--gray">0</p>
+                        <p class="complement-data">días</p>
+                    </div>
+                    <div class="countdown-item">
+                        <p id="countdown-timer-hours" class="highlight highlight--gray">0</p>
+                        <p class="complement-data">horas</p>
+                    </div>
+                    <div class="countdown-item">
+                        <p id="countdown-timer-minutes" class="highlight highlight--gray">0</p>
+                        <p class="complement-data">minutos</p>
+                    </div>
+                    <div class="countdown-item">
+                        <p id="countdown-timer-seconds" class="highlight highlight--gray">0</p>
+                        <p class="complement-data">segundos</p>
+                    </div>
+                </div>
+                <button id="contribute-button">Contribuye ya!</button>
+            </div>
+        </div>
+    </header>
+    <!-- Sección: Información detallada por secciones del proyecto -->
+    <main>
+        <!-- Barra de navegación -->
+        <nav aria-label="Navegación principal">
+            <ul class="navigation">
+                <li><a href="#campain">Campaña</a></li>
+                <li><a href="#rewards">Recompensas</a></li>
+                <li><a href="#faq">Preguntas frecuentes</a></li>
+                <li><a href="#comments">Comentarios</a></li>
+            </ul>
+        </nav>
+        <!-- Sección Campaña: Detalla la información de la historia del proyecto -->
+        <section id="campain">
+            <article>
+                <h2>Historia</h2>
+                <p>
+                    Slide and Smash es un juego roguelike en el que necesitarás seguir mejorando a tus personajes para 
+                    sobrevivir. ¡Elige a tu héroe y comienza la aventura! Tu personaje estará representado como un token 
+                    en el tablero, y tendrás que sobrevivir un número determinado de rondas para avanzar al siguiente nivel.
+                    Elige una dirección para moverte, ¡pero ten cuidado todo el tablero se moverá contigo!
+                </p>
+                <p>
+                    A medida que progresas, desbloquearás nuevas habilidades que se activarán durante el juego. Con cada 
+                    ronda, obtendrás recompensas, ganando experiencia para desbloquear nuevas habilidades y dinero para 
+                    mejorarlas. ¡Prepárate para que comience la aventura!
+                </p>
+                <p>
+                    Plataformas disponibles: Steam
+                </p>
+                <figure>
+                    <img src="src/game-sketch.png" alt="Primer prototipo del juego">
+                    <figcaption>Prototipo inicial del juego.</figcaption>
+                </figure>
+            </article>
+            <article>
+                <h2>Disponible en</h2>
+                <ul>
+                    <li><a href="https://dacaldes.itch.io/slide-and-smash">Demo Itch.io</a></li>
+                    <li><a href="https://x.com/InfiernogamesEs">Twitter</a></li>
+                </ul>
+            </article>
+            <article>
+            <h2>Inferno Games</h2>
+            <p>
+                Inferno Games es un equipo de dos desarrolladores apasionados por la creación de videojuegos. Nos 
+                conocimos durante nuestra formación en ingeniería de Diseño y Desarrollo de Videojuegos, y aunque no 
+                somos un estudio formal, nos dedicamos a desarrollar títulos únicos y originales, cada uno con su 
+                propio sello distintivo. Nuestro objetivo es ofrecer experiencias de juego innovadoras que destaquen en 
+                el mundo del entretenimiento digital.
+            </p>
+            </article>
+        </section>
+        <!-- Sección Recompensas: Detalla las diferentes recompensas según la contribución al proyecto -->
+        <section id="rewards">
+            <h2>Recompensas</h2>
+            <article class = "reward">
+                <h3>Apoyo básico</h3>
+                <p>Contribuye con 1€ y obtén acceso al servidor de discor para desarrolladores.</p>
+                <button>Contribuye con 1€</button>
+            </article>
+            <article class = "reward">
+                <h3>Edición estándar</h3>
+                <p>Contribuye con 10€ y obtén las recompensas anteriores más una clave para la salida del juego en Steam.</p>
+                <button>Contribuye con 10€</button>
+            </article>
+            <article class = "reward">
+                <h3>Edición early-acces</h3>
+                <p>Contribuye con 15€ y obtén las recompensas anteriores más una clave para la salida del juego en Steam con acceso anticipado.</p>
+                <button>Contribuye con 15€</button>
+            </article>
+            <article class = "reward">
+                <h3>Edición de coleccionista</h3>
+                <p>Contribuye con 30€ y obtén las recompensas anteriores más pegatinas exclusivas del juego, un poster con el mapa y llaveros de cada personaje.</p>
+                <button>Contribuye con 30€</button>
+            </article>
+        </section>
+        <!-- Sección Preguntas frecuentes: Presenta las dudas y soluciones más comunes de los usuarios -->
+        <section id="faq">
+            <h2>Preguntas frecuentes</h2>
+            <details class = "question">
+                <summary>¿Cuándo estará listo el juego?</summary>
+                <p>Saldrá disponible en Steam con un precio de 12.99€ el 1/01/2025</p>
+            </details>
+            <details class = "question">
+                <summary>¿Si ya he contribuido en un plan y cojo uno superior, recibo ambas recompensas?</summary>
+                <p>Sí, la participación total será lo que determine el plan seleccionado</p>
+            </details>
+        </section>
+        <!-- Sección Comentarios: Presenta los comentarios de los usuarios al proyecto -->
+        <section id="comments">
+            <h2>Comentarios</h2>
+            <article class="comment">
+                <form id="comment-form">
+                    <div>
+                        <input type="text" id="username" name="username" placeholder="Escribe tu nombre" required>
+                    </div>
+                    <div>
+                        <textarea id="comment" name="comment" placeholder="Añade un comentario" required ></textarea>
+                    </div>
+                    <button type="submit">Enviar Comentario</button>
+                </form>
+                <div id="comment-status"></div>    
+            </article>
+            <div id="comments-list">
+                <article class = "comment">
+                    <img src="src/user-1.png" alt="imagen de usuario">
+                    <div class="comment-content">
+                        <h3>Eva Gómez</h3>
+                        <p class="timestamp">hace 1 hora</p>
+                        <p>Tengo muchas ganas de que salga el juego, me parece una idea muy original.</p>
+                    </div>
+                </article>
+                <article class = "comment">
+                    <img src="src/user-2.png" alt="imagen de usuario">
+                    <div class="comment-content">
+                        <h3>Marisa Fernández</h3>
+                        <p class="timestamp">hace 2 días</p>
+                        <p>Me hacen mucha gracia los monigotes, me he viciado con mi familia está muy chulo.</p>
+                    </div>
+                </article>
+                <article class = "comment">
+                    <img src="src/user-3.png" alt="imagen de usuario">
+                    <div class="comment-content">
+                        <h3>Juan Lobato</h3>
+                        <p class="timestamp">hace 1 mes</p>
+                        <p>Os conocí en el Guerrilla Games Festival y me caísteis genial. Mucho ánimo y que siga adelante el proyecto</p>
+                    </div>
+                </article>
+                <article class = "response-comment">
+                    <img src="src/user-developer.png" alt="imagen de usuario">
+                    <div class="comment-content">
+                        <h3>Infierno Games</h3>
+                        <p class="timestamp">hace 23 días</p>
+                        <p>Muchas gracias Juan! :)</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <!-- Sección Final: Disclaimer de la web -->
+    <footer>
+        <p>&copy; 2024 Proyecto Crowdfunding Slide&Smash. Todos los derechos reservados.</p>
+        <nav aria-label="Terminos y condiciones">
+            <ul>
+                <li><a href="#privacy-policy">Política de privacidad</a></li>
+                <li><a href="#terms">Términos y condiciones</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <!-- Enlaces a los javascript -->
+    <script type="text/javascript" src="js/countdownTimer.js" defer></script>
+    <script type="text/javascript" src="js/carousel.js" defer></script>
+    <script type="text/javascript" src="js/comments.js" defer></script>
+    <script type="text/javascript" src="js/progressBar.js" defer></script>
+</body>
+</html>
