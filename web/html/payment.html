@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Etiquetas para mejorar el SEO -->
+    <meta name="description" content="Slide & Smash: Un videojuego roguelike emocionante para Steam. Descubre nuestra campaña y únete como patrocinador.">
+    <meta name="keywords" content="videojuego, roguelike, Steam, campaña, crowdfunding">
+    <meta name="author" content="Infierno Games">
+    <!-- Titulo y favicon -->
+    <title>Slide & Smash</title>
+    <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+    <!-- Enlaces a los estilos css -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <!-- Sección: Información general del proyecto -->
+    <header>
+        <div class="title-container">
+            <h1>Slide & Smash</h1>
+            <p>by <span class = "subtitle">Infierno Games</span></p>
+        </div>
+        <p class="tagline">Un videojuego roguelike para Steam</p>
+    </header>
+    <!-- Sección: Información detallada por secciones del proyecto -->
+    <main>
+        <!-- Barra de navegación -->
+        <nav aria-label="Navegación principal">
+            <ul class="navigation">
+                <li><a href="../index.html">Campaña</a></li>
+                <li>></li>
+                <li><a href="fundraiser.html">Recompensas ficticias</a></li>
+                <li>></li>
+                <li>Pago ficticio</li>
+            </ul>
+        </nav>
+        <!-- Sección Cesta: Permite observar las opciones seleccionadas generado desde javascript-->
+        <section id="cart">
+            <h2>Recompensas ficticias</h2>
+            <div class="cart-container">
+                <figure class="cart-image">
+                    <img src="../src/game-sketch.png" alt="Primer prototipo del juego">
+                    <figcaption>Prototipo inicial del juego.</figcaption>
+                </figure>
+                <div class="cart-details">
+                    <div class="reward-item">
+                        <label for="reward-name"><strong>Recompensa</strong></label>
+                        <div class="cart-item-row">
+                            <span id="reward-name">Nombre de la recompensa</span>
+                            <span id="rewards-cost" class="reward-cost">$30</span>
+                        </div>
+                    </div>
+                    <div class="cart-item-row">
+                        <label for="extra-support"><strong>Apoyo extra</strong></label>
+                        <div class="input-container">
+                            <span class="currency-symbol">$</span>
+                            <input type="number" id="extra-support" name="extra-support" min="0" value="0" class="extra-input" aria-label="Apoyo extra">
+                        </div>
+                    </div>
+                    <div class="shipping-item">
+                        <label for="shipping-country"><strong>Envío</strong></label>
+                        <div class="cart-item-row">
+                            <span id="shipping-country">País seleccionado</span>
+                            <span id="shipping-cost" class="shipping-cost">$15</span>
+                        </div>
+                    </div>
+                    <hr class="separator">
+                    <div class="cart-item-row">
+                        <label for="total-cost"><strong>Coste total</strong></label>
+                        <span id="total-cost" class="total-cost">$45</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección Pago: Formulario para pagar si se quisiera a futuro se sustituiría por una pasarela de pago con Paypal -->
+        <section id="pay">
+            <h2>Pago ficticio</h2>
+            <article class = "reward">
+                <p> ⚠️<strong>Advertencia:</strong> Este formulario es solo para propósitos educativos. No introduzca datos reales.</p>
+                <form action="/process-payment" method="POST">
+                    <div class="form-group">
+                        <label for="name">✉️</label>
+                        <input type="text" id="name" name="name" placeholder="johndoe@gmail.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="card-number">💳</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required pattern="\d{16}">
+                    </div class="form-group">
+                    
+                    <div class="form-group">
+                        <label for="expiry-date">📅</label>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required pattern="\d{2}/\d{2}">
+                
+                        <label for="cvv">🔒</label>
+                        <input type="password" id="cvv" name="cvv" placeholder="123" required pattern="\d{3}">
+                    </div>
+            
+                    <button type="submit">Submit Payment</button>
+                </form>
+            </article>
+        </section>
+    </main>
+    <!-- Sección Final: Disclaimer de la web -->
+    <footer>
+        <p>&copy; 2024 Proyecto Crowdfunding Slide&Smash. Todos los derechos reservados.</p>
+        <nav aria-label="Terminos y condiciones">
+            <ul>
+                <li><a href="#privacy-policy">Política de privacidad</a></li>
+                <li><a href="#terms">Términos y condiciones</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <!-- Enlaces a los javascript -->
+</body>
+</html>

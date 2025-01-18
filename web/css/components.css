@@ -108,6 +108,65 @@
     margin: 10px 0;
 }
 
+.reward-item, .shipping-item{
+    display: flex;
+    flex-direction: column;
+}
+.support-item, .total-cost-item, .cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.reward-item label,
+.support-item label,
+.shipping-item label,
+.total-cost-item label {
+    font-size: 16px;
+    color: #444;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.reward-item span,
+.support-item span,
+.shipping-item span{
+    font-size: 16px;
+    color: #333;
+}
+
+/* Apoyo extra input container */
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+.currency-symbol {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.extra-input {
+    width: 120px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: right;
+}
+
+.extra-input:focus {
+    border-color: #007BFF;
+    background-color: #e7f3ff;
+}
+
+.total-cost {
+    font-size: 18px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+
 /*FAQs*/
 .question {
     padding: 10px;

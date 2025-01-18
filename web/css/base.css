@@ -1,15 +1,21 @@
 /* =========================================
    Estilos básicos aplicables a todo el documento
    ========================================= */
+html{
+    height: 100%;
+}
 
 body {
     min-width: 320px;
+    min-height: 100vh;
     font-family: var(--font-text);
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: var(--black);
     background-color: var(--white);
+    display: flex; 
+    flex-direction: column;
 }
 
 h1, h2, h3{

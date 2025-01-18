@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProgressBar(fundStorage.getCurrentRaised(), fundStorage.getTargetAmount());
 });
 
-document.getElementById('contribute-button').addEventListener('click', () => {
+/*document.getElementById('contribute-button').addEventListener('click', () => {
     const donation = 1000;
     fundStorage.addAmount(donation);
-});
+});*/

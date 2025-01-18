@@ -76,17 +76,66 @@ nav {
 
 /* Main Content */
 main {
+    min-height: 100vh;
     position: relative;
 }
 
 section {
-    margin-bottom: 40px;
     padding: 20px;
+    padding-top: 80px;
 }
+
 
 article{
     margin-bottom: 20px;
 }
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.form-group label{
+    margin-right: 10px;
+}
+.form-group input + label {
+    margin-left: 15px;
+}
+
+
+/*Cart*/
+.cart-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cart-image {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.cart-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-image figcaption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.cart-details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 
 /* Footer */
 footer, footer nav, footer nav ul {
