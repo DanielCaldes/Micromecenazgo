@@ -33,7 +33,7 @@
             <ul class="navigation">
                 <li><a href="../index.html">Campaña</a></li>
                 <li>></li>
-                <li><a href="fundraiser.html">Recompensas ficticias</a></li>
+                <li><a href="fake-rewards.html">Recompensas ficticias</a></li>
                 <li>></li>
                 <li>Pago ficticio</li>
             </ul>
@@ -89,7 +89,7 @@
                     
                     <div class="form-group">
                         <label for="card-number">💳</label>
-                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required pattern="\d{16}">
+                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required pattern="(\d{4}[\s]?){4}">
                     </div class="form-group">
                     
                     <div class="form-group">
@@ -116,5 +116,6 @@
         </nav>
     </footer>
     <!-- Enlaces a los javascript -->
+    <script type="text/javascript" src="../js/payment.js" defer></script>
 </body>
 </html>

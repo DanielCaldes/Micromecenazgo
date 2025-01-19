@@ -65,7 +65,7 @@
                         <p class="complement-data">segundos</p>
                     </div>
                 </div>
-                <button onclick="location.href='html/fundraiser.html'"> Contribuye ya! </button>
+                <button onclick="location.href='html/fake-rewards.html'"> Contribuye ya! </button>
             </div>
         </div>
     </header>
@@ -125,24 +125,10 @@
         <section id="rewards">
             <h2>Recompensas</h2>
             <article class = "reward">
-                <h3>Apoyo básico</h3>
-                <p>Contribuye con 1€ y obtén acceso al servidor de discor para desarrolladores.</p>
-                <button onclick="location.href='html/fundraiser.html'">Contribuye con 1€</button>
-            </article>
-            <article class = "reward">
-                <h3>Edición estándar</h3>
-                <p>Contribuye con 10€ y obtén las recompensas anteriores más una clave para la salida del juego en Steam.</p>
-                <button onclick="location.href='html/fundraiser.html'">Contribuye con 10€</button>
-            </article>
-            <article class = "reward">
-                <h3>Edición early-acces</h3>
-                <p>Contribuye con 15€ y obtén las recompensas anteriores más una clave para la salida del juego en Steam con acceso anticipado.</p>
-                <button onclick="location.href='html/fundraiser.html'">Contribuye con 15€</button>
-            </article>
-            <article class = "reward">
-                <h3>Edición de coleccionista</h3>
-                <p>Contribuye con 30€ y obtén las recompensas anteriores más pegatinas exclusivas del juego, un poster con el mapa y llaveros de cada personaje.</p>
-                <button onclick="location.href='html/fundraiser.html'">Contribuye con 30€</button>
+                <h3>Titulo de recompensa</h3>
+                <p>Descripción.</p>
+                <button class="contribute-button">Contribuye con X€</button>
+                <div class="country-container" hidden></div>
             </article>
         </section>
         <!-- Sección Preguntas frecuentes: Presenta las dudas y soluciones más comunes de los usuarios -->
@@ -223,5 +209,6 @@
     <script type="text/javascript" src="js/carousel.js" defer></script>
     <script type="text/javascript" src="js/comments.js" defer></script>
     <script type="module" src="js/fundraiser.js" defer></script>
+    <script type="module" src="js/rewardsGateway.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,12 @@
+[
+    { "value": "argentina", "text": "Argentina", "shippingCost": 15 },
+    { "value": "bolivia", "text": "Bolivia", "shippingCost": 10 },
+    { "value": "brazil", "text": "Brasil", "shippingCost": 12 },
+    { "value": "chile", "text": "Chile", "shippingCost": 8 },
+    { "value": "colombia", "text": "Colombia", "shippingCost": 7 },
+    { "value": "ecuador", "text": "Ecuador", "shippingCost": 9 },
+    { "value": "mexico", "text": "México", "shippingCost": 11 },
+    { "value": "peru", "text": "Perú", "shippingCost": 8 },
+    { "value": "spain", "text": "España", "shippingCost": 5 },
+    { "value": "venezuela", "text": "Venezuela", "shippingCost": 14 }
+]

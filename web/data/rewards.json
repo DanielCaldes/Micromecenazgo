@@ -1,0 +1,38 @@
+[
+    {
+        "id": "basic",
+        "title": "Básica",
+        "description": "Contribuye con 1€ y obtén acceso al servidor de Discord para desarrolladores.",
+        "price": 1,
+        "requiresShipping": false,
+        "imageURL": "",
+        "imageDescription":""
+    },
+    {
+        "id": "standar",
+        "title": "Estándar",
+        "description": "Contribuye con 10€ y obtén las recompensas anteriores más una clave para la salida del juego en Steam.",
+        "price": 10,
+        "requiresShipping": false,
+        "imageURL": "",
+        "imageDescription":""
+    },
+    {
+        "id": "early-acces",
+        "title": "Acceso anticipado",
+        "description": "Contribuye con 15€ y obtén las recompensas anteriores más una clave para la salida del juego en Steam con acceso anticipado.",
+        "price": 15,
+        "requiresShipping": false,
+        "imageURL": "",
+        "imageDescription":""
+    },
+    {
+        "id": "collector",
+        "title": "Colleccionista",
+        "description": "Contribuye con 30€ y obtén las recompensas anteriores más pegatinas exclusivas del juego, un poster con el mapa y llaveros de cada personaje.",
+        "price": 30,
+        "requiresShipping": true,
+        "imageURL": "/web/src/game-sketch.png",
+        "imageDescription":"Póster"
+    }
+]

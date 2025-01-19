@@ -1,5 +1,5 @@
-import { updateProgressBar} from './fundraiser/progressBar.js';
-import { FundStorage } from './fundraiser/fundStorage.js';
+import { updateProgressBar} from './progressBar.js';
+import { FundStorage } from './fundStorage.js';
 
 const fundStorage = new FundStorage(10000);
 //fundStorage.resetCurrentRaised();    //Uncoment to reset raised money
