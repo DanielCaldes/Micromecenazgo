@@ -1,6 +1,7 @@
 import { initializeRewards } from './rewards.js';
+import {getUrl} from './urls.js';
 
-fetch('../data/rewards.json')
+fetch(getUrl('../data/rewards.json'))
     .then(response => response.json())
     .then(rewards => {
         const rewardsSection = document.querySelector('#rewards');
