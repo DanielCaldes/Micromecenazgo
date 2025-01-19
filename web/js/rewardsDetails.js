@@ -1,6 +1,6 @@
 import { initializeRewards } from './rewards.js';
 
-fetch('/web/data/rewards.json')
+fetch('./web/data/rewards.json')
     .then(response => response.json())
     .then(rewards => {
         const rewardsSection = document.querySelector('#rewards');

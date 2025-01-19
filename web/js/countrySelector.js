@@ -9,7 +9,7 @@ export function createCountrySelection(container){
     defaultOption.textContent = 'Seleccione un país';
     select.appendChild(defaultOption);
 
-    fetch('/web/data/countries.json')
+    fetch('./web/data/countries.json')
         .then(response => response.json())
         .then(countries => {
             countries.forEach(country => {
