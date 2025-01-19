@@ -1,6 +1,13 @@
 import { createCountrySelection } from './countrySelector.js';
 import {getUrl} from './urls.js';
 
+function checkUrl(){
+    const basePath = window.location.pathname.includes('/html/')
+                ? '../html/fake-payment.html'
+                : './html/fake-payment.html';
+    return basePath;
+}
+
 function linkPayment(container, selectedEdition){
     const select = container.querySelector('.countries');
     const button = document.createElement('button');
@@ -9,7 +16,7 @@ function linkPayment(container, selectedEdition){
         const selectedCountry = select.value;
         if (selectedCountry) {
             localStorage.setItem('edition', selectedEdition);
-            window.location.href = getUrl('/html/fake-payment.html');
+            window.location.href = getUrl(checkUrl('/html/fake-payment.html'));
         } else {
             alert('Por favor, selecciona un país antes de continuar.');
         }
@@ -57,7 +64,7 @@ export function initializeRewards() {
         else{
             button.addEventListener('click', () => {
                 localStorage.setItem('edition', button.dataset.edition);
-                window.location.href = getUrl('/html/fake-payment.html');
+                window.location.href = getUrl(checkUrl('/html/fake-payment.html'));
             });
         }
     });
