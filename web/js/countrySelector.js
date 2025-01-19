@@ -1,3 +1,10 @@
+function changePage(){
+    const basePath = window.location.pathname.includes('/html/')
+                ? '../data/countries.json'
+                : './data/countries.json';
+    return basePath;
+}
+
 export function createCountrySelection(container){
     const select = document.createElement('select');
     select.className = 'countries';
@@ -9,7 +16,8 @@ export function createCountrySelection(container){
     defaultOption.textContent = 'Seleccione un país';
     select.appendChild(defaultOption);
 
-    fetch('./web/data/countries.json')
+    
+    fetch(changePage())
         .then(response => response.json())
         .then(countries => {
             countries.forEach(country => {
