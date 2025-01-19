@@ -3,7 +3,7 @@ import {getUrl} from './urls.js';
 
 function checkUrl(){
     const basePath = window.location.pathname.includes('/html/')
-                ? '../html/fake-payment.html'
+                ? './fake-payment.html'
                 : './html/fake-payment.html';
     return basePath;
 }
