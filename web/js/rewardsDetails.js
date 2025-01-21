@@ -9,7 +9,7 @@ fetch(getUrl('../data/rewards.json'))
         rewardsSection.innerHTML = '';
         
         const h2 = document.createElement('h2');
-        h2.textContent = "Recompensas";
+        h2.textContent = "Recompensas ficticias";
         rewardsSection.appendChild(h2);
 
         rewards.forEach(reward => {
@@ -26,8 +26,18 @@ fetch(getUrl('../data/rewards.json'))
             button.classList.add('contribute-button');
             button.textContent = `Contribuye con ${reward.price}€`;
             button.dataset.price = reward.price;
-            button.dataset.edition = reward.edition;
+            button.dataset.rewardId = reward.rewardId;
             button.dataset.requiresShipping = reward.requiresShipping;
+
+            const figure = document.createElement('figure');
+            figure.classList = "cart-image";
+            const image = document.createElement('img');
+            image.src = reward.imageURL;
+            image.alt = reward.imageDescription;
+            figure.appendChild(image);
+            const figcaption = document.createElement('figcaption');
+            figcaption.textContent = reward.imageDescription;
+            figure.appendChild(figcaption);
 
             const countryContainer = document.createElement('div');
             countryContainer.classList.add('country-container');
@@ -35,6 +45,7 @@ fetch(getUrl('../data/rewards.json'))
 
 
             article.appendChild(title);
+            article.appendChild(figure);
             article.appendChild(description);
             article.appendChild(button);
             article.appendChild(countryContainer);

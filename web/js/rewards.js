@@ -8,15 +8,15 @@ function checkUrl(){
     return basePath;
 }
 
-function linkPayment(container, selectedEdition){
+function linkPayment(container, selectedReward){
     const select = container.querySelector('.countries');
     const button = document.createElement('button');
     button.textContent = 'Confirmar';
     button.onclick = () => {
         const selectedCountry = select.value;
         if (selectedCountry) {
-            localStorage.setItem('edition', selectedEdition);
-            window.location.href = getUrl(checkUrl('/html/fake-payment.html'));
+            localStorage.setItem('rewardId', selectedReward);
+            window.location.href = getUrl(checkUrl('./html/fake-payment.html'));
         } else {
             alert('Por favor, selecciona un país antes de continuar.');
         }
@@ -40,7 +40,7 @@ export function initializeRewards() {
 
         if(button.dataset.requiresShipping === 'true'){
             createCountrySelection(container);
-            linkPayment(container, button.dataset.edition);
+            linkPayment(container, button.dataset.rewardId);
 
             button.addEventListener('click', () => {
             
@@ -63,8 +63,8 @@ export function initializeRewards() {
         }
         else{
             button.addEventListener('click', () => {
-                localStorage.setItem('edition', button.dataset.edition);
-                window.location.href = getUrl(checkUrl('/html/fake-payment.html'));
+                localStorage.setItem('rewardId', button.dataset.rewardId);
+                window.location.href = getUrl(checkUrl('./html/fake-payment.html'));
             });
         }
     });

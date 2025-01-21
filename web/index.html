@@ -28,9 +28,8 @@
         <div class="header-info">
             <div class="header-item carousel-container">
                 <div class="carousel">
-                    <img src="src/game-sketch.png" alt="Imagen 1" class="carousel-item">
-                    <img src="src/game-sketch.png" alt="Imagen 2" class="carousel-item">
-                    <img src="src/game-sketch.png" alt="Imagen 3" class="carousel-item">
+                    <img src="src/game-title.png" alt="Imagen 1" class="carousel-item">
+                    <img src="src/game-screenshoot.png" alt="Imagen 2" class="carousel-item">
                 </div>
                 <button class="carousel-button carousel-button--prev" aria-label="Anterior">&#10094;</button>
                 <button class="carousel-button carousel-button--next" aria-label="Siguiente">&#10095;</button>
@@ -75,7 +74,7 @@
         <nav aria-label="Navegación principal">
             <ul class="navigation">
                 <li><a href="#campain">Campaña</a></li>
-                <li><a href="#rewards">Recompensas</a></li>
+                <li><a href="#rewards">Recompensas ficticias</a></li>
                 <li><a href="#faq">Preguntas frecuentes</a></li>
                 <li><a href="#comments">Comentarios</a></li>
             </ul>
@@ -99,8 +98,8 @@
                     Plataformas disponibles: Steam
                 </p>
                 <figure>
-                    <img src="src/game-sketch.png" alt="Primer prototipo del juego">
-                    <figcaption>Prototipo inicial del juego.</figcaption>
+                    <img src="src/game-screenshoot.png" alt="Captura de pantalla del juego">
+                    <figcaption>Captura de pantalla del juego.</figcaption>
                 </figure>
             </article>
             <article>
@@ -125,9 +124,9 @@
         <section id="rewards">
             <h2>Recompensas</h2>
             <article class = "reward">
-                <h3>Titulo de recompensa</h3>
-                <p>Descripción.</p>
-                <button class="contribute-button">Contribuye con X€</button>
+                <h3>Recompensa Básica</h3>
+                <p>Contribuye con 1€ y obtén acceso al servidor de Discord para desarrolladores.</p>
+                <button class="contribute-button">Contribuye con 1€</button>
                 <div class="country-container" hidden></div>
             </article>
         </section>
@@ -160,22 +159,6 @@
             </article>
             <div id="comments-list">
                 <article class = "comment">
-                    <img src="src/user-1.png" alt="imagen de usuario">
-                    <div class="comment-content">
-                        <h3>Eva Gómez</h3>
-                        <p class="timestamp">hace 1 hora</p>
-                        <p>Tengo muchas ganas de que salga el juego, me parece una idea muy original.</p>
-                    </div>
-                </article>
-                <article class = "comment">
-                    <img src="src/user-2.png" alt="imagen de usuario">
-                    <div class="comment-content">
-                        <h3>Marisa Fernández</h3>
-                        <p class="timestamp">hace 2 días</p>
-                        <p>Me hacen mucha gracia los monigotes, me he viciado con mi familia está muy chulo.</p>
-                    </div>
-                </article>
-                <article class = "comment">
                     <img src="src/user-3.png" alt="imagen de usuario">
                     <div class="comment-content">
                         <h3>Juan Lobato</h3>
@@ -207,7 +190,7 @@
     <!-- Enlaces a los javascript -->
     <script type="text/javascript" src="js/countdownTimer.js" defer></script>
     <script type="text/javascript" src="js/carousel.js" defer></script>
-    <script type="text/javascript" src="js/comments.js" defer></script>
+    <script type="module" src="js/comments.js" defer></script>
     <script type="module" src="js/fundraiser.js" defer></script>
     <script type="module" src="js/rewardsGateway.js" defer></script>
 </body>

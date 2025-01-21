@@ -43,8 +43,8 @@
             <h2>Recompensas ficticias</h2>
             <div class="cart-container">
                 <figure class="cart-image">
-                    <img src="../src/game-sketch.png" alt="Primer prototipo del juego">
-                    <figcaption>Prototipo inicial del juego.</figcaption>
+                    <img src="../src/game-screenshoot.png" alt="Captura de pantalla del juego">
+                    <figcaption>Captura de pantalla del juego.</figcaption>
                 </figure>
                 <div class="cart-details">
                     <div class="reward-item">
@@ -81,7 +81,7 @@
             <h2>Pago ficticio</h2>
             <article class = "reward">
                 <p> ⚠️<strong>Advertencia:</strong> Este formulario es solo para propósitos educativos. No introduzca datos reales.</p>
-                <form action="/process-payment" method="POST">
+                <form id="payment-form" action="/process-payment" method="POST">
                     <div class="form-group">
                         <label for="name">✉️</label>
                         <input type="text" id="name" name="name" placeholder="johndoe@gmail.com" required>
@@ -116,6 +116,6 @@
         </nav>
     </footer>
     <!-- Enlaces a los javascript -->
-    <script type="text/javascript" src="../js/payment.js" defer></script>
+    <script type="module" src="../js/payment.js" defer></script>
 </body>
 </html>
