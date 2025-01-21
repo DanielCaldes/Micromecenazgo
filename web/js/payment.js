@@ -45,7 +45,7 @@ fetch(getUrl('../data/rewards.json'))
                             if(country.text === searchedCountry){
                                 shippingCost.textContent = country.shippingCost;
                                 shipmentPrice = country.shippingCost;
-                                totalCost.textContent = shippingPrice + rewardPrice;
+                                totalCost.textContent = shipmentPrice + rewardPrice;
                             }
                         });
                     })
