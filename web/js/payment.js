@@ -1,89 +1,135 @@
-import {getUrl} from './urls.js';
+import { getUrl } from './urls.js';
 import { FundStorage } from './fundStorage.js';
 
-let rewardPrice = 0;
-let shipmentPrice = 0;
-let supplementPrice = 0;
-const totalCost = document.querySelector("#total-cost");
+const state = {
+    fundStorage : new FundStorage(),
+    rewardPrice: 0,
+    shipmentPrice: 0,
+    supplementPrice: 0,
+    get fund() {
+        return this.rewardPrice + this.supplementPrice;
+    },
+    get totalCost() {
+        return this.rewardPrice + this.shipmentPrice + this.supplementPrice;
+    },
+};
 
-fetch(getUrl('../data/rewards.json'))
-    .then(response => response.json())
-    .then(rewards => {
-
-        const rewardId = localStorage.getItem("rewardId");
-
-        rewards.forEach(reward => {
-            if(reward.rewardId == rewardId){
-
-                const rewardName = document.querySelector("#reward-name");
-                rewardName.textContent = reward.title;
-                
-                rewardPrice = reward.price;
-                const rewardCost = document.querySelector("#rewards-cost");
-                rewardCost.textContent = rewardPrice;
-
-                const shippingCountry = document.querySelector("#shipping-country");
-                const shippingCost = document.querySelector("#shipping-cost");
-
-                const figure = document.querySelector(".cart-image");
-                figure.innerHTML = '';
-                const image = document.createElement('img');
-                image.src = getUrl(`../src/${reward.imageURL}`);
-                image.alt = reward.imageDescription;
-                figure.appendChild(image);
-                const figcaption = document.createElement('figcaption');
-                figcaption.textContent = reward.imageDescription;
-                figure.appendChild(figcaption);
-
-                if (reward.requiresShipping){
-                    shippingCountry.textContent = localStorage.getItem("country");
-                    fetch(getUrl('../data/countries.json'))
-                    .then(response2 => response2.json())
-                    .then(countries => {
-                        const searchedCountry = localStorage.getItem("country");
-                        countries.forEach(country => {
-                            if(country.text === searchedCountry){
-                                shippingCost.textContent = country.shippingCost;
-                                shipmentPrice = country.shippingCost;
-                                totalCost.textContent = shipmentPrice + rewardPrice;
-                            }
-                        });
-                    })
-                } else{
-                    shippingCountry.textContent = "No necesario";
-                    shippingCost.textContent = "Gratis";
-                    totalCost.textContent = rewardPrice;
-                }
-            }
-        });
-    })
-    .catch(error => {
-        console.error('Error al cargar el archivo de recompensas:', error);
-    });
-
+// Elementos del DOM
+const totalCostElement = document.querySelector("#total-cost");
+const rewardNameElement = document.querySelector("#reward-name");
+const rewardCostElement = document.querySelector("#rewards-cost");
+const shippingCountryElement = document.querySelector("#shipping-country");
+const shippingCostElement = document.querySelector("#shipping-cost");
 const extraSupportInput = document.querySelector("#extra-support");
-
-extraSupportInput.addEventListener("input", (event) => {
-    supplementPrice = parseInt(event.target.value);
-    totalCost.textContent = shipmentPrice + rewardPrice + supplementPrice;
-});
-
 const form = document.getElementById('payment-form');
 
+// Función para actualizar el costo total en el DOM
+function updateTotalCost() {
+    totalCostElement.textContent = state.totalCost;
+}
+
+// Función para cargar los datos de la recompensa
+async function loadRewardData() {
+    try {
+        const rewards = await fetch(getUrl('../data/rewards.json')).then(res => res.json());
+        const rewardId = localStorage.getItem("rewardId");
+
+        const reward = rewards.find(r => r.rewardId == rewardId);
+        if (!reward) throw new Error("Recompensa no encontrada");
+
+        rewardNameElement.textContent = reward.title;
+        state.rewardPrice = reward.price;
+        rewardCostElement.textContent = state.rewardPrice;
+
+        const figure = document.querySelector(".cart-image");
+        figure.innerHTML = '';
+        const image = document.createElement('img');
+        image.src = getUrl(`../src/${reward.imageURL}`);
+        image.alt = reward.imageDescription;
+        figure.appendChild(image);
+
+        const figcaption = document.createElement('figcaption');
+        figcaption.textContent = reward.imageDescription;
+        figure.appendChild(figcaption);
+
+        if (reward.requiresShipping) {
+            await loadShippingData(reward);
+        } else {
+            shippingCountryElement.textContent = "No necesario";
+            shippingCostElement.textContent = "Gratis";
+            state.shipmentPrice = 0;
+            updateTotalCost();
+        }
+    } catch (error) {
+        console.error('Error al cargar los datos de la recompensa:', error);
+        alert("Hubo un error al cargar los datos de la recompensa. Por favor, inténtalo de nuevo.");
+    }
+}
+
+// Función para cargar los datos de envío
+async function loadShippingData(reward) {
+    try {
+        shippingCountryElement.textContent = localStorage.getItem("country") || "País no especificado";
+
+        const countries = await fetch(getUrl('../data/countries.json')).then(res => res.json());
+        const searchedCountry = localStorage.getItem("country");
+        const country = countries.find(c => c.text === searchedCountry);
+
+        if (country) {
+            shippingCostElement.textContent = country.shippingCost;
+            state.shipmentPrice = country.shippingCost;
+        } else {
+            throw new Error("País no encontrado en la lista");
+        }
+    } catch (error) {
+        console.error('Error al cargar los datos de envío:', error);
+        alert("Hubo un error al cargar los datos de envío. Por favor, verifica tu selección.");
+    } finally {
+        updateTotalCost();
+    }
+}
+
+// Manejar el soporte extra
+extraSupportInput.addEventListener("input", (event) => {
+    state.supplementPrice = parseInt(event.target.value) || 0;
+    updateTotalCost();
+});
+
+// Validar formulario antes de enviar
+function validateForm() {
+    const email = document.getElementById('name').value;
+    const cardNumber = document.getElementById('card-number').value;
+    const expiryDate = document.getElementById('expiry-date').value;
+    const cvv = document.getElementById('cvv').value;
+
+    if (!email || !cardNumber || !expiryDate || !cvv) {
+        alert("Por favor, completa todos los campos del formulario.");
+        return false;
+    }
+
+    // Validaciones adicionales (opcional)
+    if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+        alert("Número de tarjeta inválido.");
+        return false;
+    }
+
+    return true;
+}
+
+// Enviar formulario
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const mail = document.getElementById('name').value;
-    const cardNumber = document.getElementById('card-number').value;
-    const expiredDate = document.getElementById('expiry-date').value;
-    const cvv = document.getElementById('cvv').value;
+    if (!validateForm()) return;
 
-    const fund = new FundStorage();
-    fund.addAmount(rewardPrice + supplementPrice);
+    state.fundStorage.addAmount(state.fund);
 
     alert("¡Muchas gracias por su contribución!");
-    window.location.href = getUrl('../index.html');
-    
-    // Limpiar los campos del formulario
     form.reset();
+    window.location.href = getUrl('../index.html');
+});
+
+// Cargar los datos al inicio
+document.addEventListener('DOMContentLoaded', () => {
+    loadRewardData();
 });

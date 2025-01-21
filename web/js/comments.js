@@ -44,9 +44,8 @@ function renderComment(username, comment, imageURL = "user-guess.png", date = ne
             <p>${comment}</p>
         </div>
     `;
-
-    // Añadir el nuevo comentario a la lista
-    commentsList.prepend(newComment); // Prepend para añadir al principio de la lista
+     // Añade el comentario al principio de la lista
+    commentsList.prepend(newComment);
 }
 
 
