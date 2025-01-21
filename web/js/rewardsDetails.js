@@ -32,7 +32,7 @@ fetch(getUrl('../data/rewards.json'))
             const figure = document.createElement('figure');
             figure.classList = "cart-image";
             const image = document.createElement('img');
-            image.src = reward.imageURL;
+            image.src = getUrl(`../src/${reward.imageURL}`);
             image.alt = reward.imageDescription;
             figure.appendChild(image);
             const figcaption = document.createElement('figcaption');

@@ -32,7 +32,7 @@
         "description": "Contribuye con 30€ y obtén las recompensas anteriores más pegatinas exclusivas del juego, un poster con el mapa y llaveros de cada personaje.",
         "price": 30,
         "requiresShipping": true,
-        "imageURL": "/web/src/game-collector.png",
+        "imageURL": "game-collector.png",
         "imageDescription":"Póster, pegatinas y llaveros exclusivos"
     }
 ]
