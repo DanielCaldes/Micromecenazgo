@@ -3,6 +3,7 @@ import {getUrl} from './urls.js';
 const form = document.getElementById('comment-form');
 const commentsList = document.getElementById('comments-list');
 
+// Devuelve el tiempo que hace de una fecha
 function timeAgo(dateString) {
     const now = new Date();
     const date = new Date(dateString);

@@ -1,13 +1,14 @@
 import { createCountrySelection } from './countrySelector.js';
 import {getUrl} from './urls.js';
 
+// Determina y devuelve la ruta base adecuada para el pago
 function getPaymentPagePath(){
-    // Determina y devuelve la ruta base adecuada para el pago
     return window.location.pathname.includes('/html/')
                 ? './fake-payment.html'
                 : './html/fake-payment.html';
 }
 
+// Crea el botón de confirmación necesario al elegir el pais
 function createConfirmButton(container, selectedReward) {
     const button = document.createElement('button');
     button.textContent = 'Confirmar';
@@ -25,18 +26,20 @@ function createConfirmButton(container, selectedReward) {
     return button;
 }
 
+// Crea el párrafo para poner el texto "Costo de envío: ${shippingCost}€ + Contribución: ${contributionPrice}€ = Total: ${totalCost}€"
 function createShippingCostMessage() {
     const message = document.createElement('p');
     message.id = 'shipping-cost-message';
     return message;
 }
 
+// Vincula a todos los botones la función correspondiente, si necesita envío al desplegable de paises y si no a la página de pago.
 function initializeRewards() {
     const buttons = document.querySelectorAll('.contribute-button');
 
     buttons.forEach((button) => {
-        const rewardDiv = button.closest('.reward');
-        const container = rewardDiv.querySelector('.country-container'); //Busca en la jerarquia DOM el elemento con la clase más cercano
+        const rewardDiv = button.closest('.reward'); //Busca en la jerarquia DOM el elemento con la clase más cercano
+        const container = rewardDiv.querySelector('.country-container'); 
         if (!container) return;
 
         const requiresShipping = button.dataset.requiresShipping === 'true';
@@ -72,6 +75,7 @@ function initializeRewards() {
     });
 }
 
+// Crea la información visual de la recompensa, título, detalles, imagen...
 function createRewardElement(reward, options = {}){
     const { includeImage = false, includeExtraInfo = false } = options;
 
@@ -131,6 +135,7 @@ function createRewardElement(reward, options = {}){
     return article;
 }
 
+// Permite crear dinámicamente la vista de las recompensas en función de la configuración elegida.
 export function loadAndRenderRewards(url, options = {}) {
     fetch(getUrl(url))
         .then(response => response.json())

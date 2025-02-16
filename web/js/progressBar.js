@@ -1,3 +1,4 @@
+//Actualiza la barra de progreso "progressBarElement"
 export function updateProgressBar(currentAmount,targetAmount, progressBarElement) {
     if (!progressBarElement) return;
     

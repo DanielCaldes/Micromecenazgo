@@ -42,7 +42,7 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: var(--white);
     font-size: 30px;
     border: none;
     padding: 10px;
@@ -123,7 +123,7 @@
 .shipping-item label,
 .total-cost-item label {
     font-size: 16px;
-    color: #444;
+    color: var(--dark-gray);
     font-weight: bold;
     margin-right: 10px;
 }
@@ -132,7 +132,7 @@
 .support-item span,
 .shipping-item span{
     font-size: 16px;
-    color: #333;
+    color: var(--dark-gray);
 }
 
 /* Apoyo extra input container */
@@ -150,12 +150,13 @@
     width: 120px;
     padding: 8px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--dark-gray);
     border-radius: 4px;
     text-align: right;
 }
 
 .extra-input:focus {
+    outline: none;
     border-color: #007BFF;
     background-color: #e7f3ff;
 }
@@ -170,13 +171,13 @@
 /*FAQs*/
 .question {
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: var(--light-gray);
     margin: 10px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 1px solid #ddd;
-    border-left: 5px solid #4CAF50;
+    border: 1px solid var(--gray);
+    border-left: 5px solid var(--primary);
     border-radius: 5px;
 }
 
@@ -192,8 +193,8 @@
 .comment,.response-comment{
     display: flex;
     align-items: flex-start;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
+    background-color: var(--light-gray);
+    border: 1px solid var(--gray);
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;

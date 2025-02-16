@@ -1,6 +1,7 @@
 import { getUrl } from './urls.js';
 import { FundStorage } from './fundStorage.js';
 
+//Guarda los datos del pago
 const state = {
     fundStorage : new FundStorage(),
     rewardPrice: 0,
@@ -28,7 +29,7 @@ function updateTotalCost() {
     totalCostElement.textContent = state.totalCost;
 }
 
-// Función para cargar los datos de la recompensa
+// Función para cargar los datos de la recompensa en el DOM
 async function loadRewardData() {
     try {
         const rewards = await fetch(getUrl('../data/rewards.json')).then(res => res.json());
@@ -53,7 +54,7 @@ async function loadRewardData() {
         figure.appendChild(figcaption);
 
         if (reward.requiresShipping) {
-            await loadShippingData(reward);
+            await loadShippingData();
         } else {
             shippingCountryElement.textContent = "No necesario";
             shippingCostElement.textContent = "Gratis";
@@ -66,8 +67,8 @@ async function loadRewardData() {
     }
 }
 
-// Función para cargar los datos de envío
-async function loadShippingData(reward) {
+// Función para cargar los datos de envío, utiliza localStorage para obtener cual fue el pais seleccionado.
+async function loadShippingData() {
     try {
         shippingCountryElement.textContent = localStorage.getItem("country") || "País no especificado";
 
@@ -89,13 +90,13 @@ async function loadShippingData(reward) {
     }
 }
 
-// Manejar el soporte extra
+// Manejar el dinero que se añada a apoyo extra
 extraSupportInput.addEventListener("input", (event) => {
     state.supplementPrice = parseInt(event.target.value) || 0;
     updateTotalCost();
 });
 
-// Validar formulario antes de enviar
+// Validar formulario antes de enviar para comprobar que no falta ningún campo por rellenar
 function validateForm() {
     const email = document.getElementById('name').value;
     const cardNumber = document.getElementById('card-number').value;
@@ -104,12 +105,6 @@ function validateForm() {
 
     if (!email || !cardNumber || !expiryDate || !cvv) {
         alert("Por favor, completa todos los campos del formulario.");
-        return false;
-    }
-
-    // Validaciones adicionales (opcional)
-    if (cardNumber.length !== 16 || isNaN(cardNumber)) {
-        alert("Número de tarjeta inválido.");
         return false;
     }
 

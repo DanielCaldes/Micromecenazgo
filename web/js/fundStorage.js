@@ -1,3 +1,6 @@
+
+// Funciona con un patrón de diseño observer, al añadir una cantidad se encarga de notificar a todos los subscriptores de forma que permite actualizar todos los lugares donde esté la cantidad.
+// además, almacena los datos de la recaudación en local storage.
 export class FundStorage{
     constructor(targetAmount){
         this.suscribers = [];   //Funtions to call when notification
@@ -24,7 +27,7 @@ export class FundStorage{
     }
     notify(){
         const currentAmount = this.getCurrentRaised();
-        const targetAmount = this.getTargetAmount();
+        const targetAmount = this.targetAmount;
         this.suscribers.forEach(subscriber => subscriber(currentAmount,targetAmount));
     }
 }

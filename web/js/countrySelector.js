@@ -5,6 +5,7 @@ function changePage(){
     return basePath;
 }
 
+//Crea el selector de pais para guardar la opción seleccionada en localStorage
 export function createCountrySelection(container){
     const select = document.createElement('select');
     select.className = 'countries';
