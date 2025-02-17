@@ -72,7 +72,12 @@
     <!-- Sección: Información detallada por secciones del proyecto -->
     <main>
         <!-- Barra de navegación -->
-        <nav aria-label="Navegación principal">
+        <nav aria-label="Navegación principal" class="has-hamburguer">
+            <button class="hamburger" aria-label="Menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="navigation">
                 <li><a href="#story">Historia</a></li>
                 <li><a href="#rewards">Recompensas ficticias</a></li>
@@ -189,6 +194,7 @@
         </nav>
     </footer>
     <!-- Enlaces a los javascript -->
+    <script type="text/javascript" src="js/hamburguerMenu.js" defer></script>
     <script type="text/javascript" src="js/countdownTimer.js" defer></script>
     <script type="text/javascript" src="js/carousel.js" defer></script>
     <script type="module" src="js/comments.js" defer></script>
