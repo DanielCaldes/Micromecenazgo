@@ -3,9 +3,23 @@
 ## Objetivos de la web
 Este proyecto busca ser una página ficticia de micromecenazgo de recompensas, para simular la recaudación de dinero para financiar un videojuego.
 
-## Enlaces Importantes:
-- [Página principal (HTML)] (https://danielcaldes.github.io/Micromecenazgo/web/index.html)
-- [Sitemap (XML)] (https://danielcaldes.github.io/Micromecenazgo/web/sitemap.xml) 
+## Instrucciones de Uso
+
+Para ver el proyecto en funcionamiento:
+
+1. **Clona o descarga este repositorio**
+   
+   Si prefieres clonar el repositorio, usa el siguiente comando:
+   ```bash
+   git clone https://github.com/DanielCaldes/Micromecenazgo.git
+   ```
+
+2. **Probarlo online**
+   
+   También puedes probar el proyecto directamente online con las siguientes URLs:
+   
+   - [Página principal (HTML)](https://danielcaldes.github.io/Micromecenazgo/web/index.html)
+   - [Sitemap (XML)](https://danielcaldes.github.io/Micromecenazgo/web/sitemap.xml)
 
 ## HTML
 Este proyecto está compuesto por una web dividida en tres páginas principales: **`index.html`**, **`fake-payment.html`** y **`fake-rewards.html`**. La estructura general de cada una de estas páginas sigue el siguiente esquema:
