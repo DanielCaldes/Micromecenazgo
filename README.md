@@ -1,13 +1,11 @@
 # Micromecenazgo
 
-Bienvenido al proyecto de Micromecenazgo. Este es un sitio para fomentar la colaboración en proyectos de crowdfunding.
+## Objetivos de la web
+Este proyecto busca ser una página ficticia de micromecenazgo de recompensas, para simular la recaudación de dinero para financiar un videojuego.
 
 ## Enlaces Importantes:
 - [Página principal (HTML)] (https://danielcaldes.github.io/Micromecenazgo/web/index.html)
 - [Sitemap (XML)] (https://danielcaldes.github.io/Micromecenazgo/web/sitemap.xml) 
-
-## Objetivos de la web
-Este proyecto busca ser una página de micromecenazgo de recompensas, para recaudar de forma ficticia dinero para financiar un videojuego.
 
 ## HTML
 Este proyecto está compuesto por una web dividida en tres páginas principales: **`index.html`**, **`fake-payment.html`** y **`fake-rewards.html`**. La estructura general de cada una de estas páginas sigue el siguiente esquema:
