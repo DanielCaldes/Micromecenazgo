@@ -21,6 +21,16 @@ Para ver el proyecto en funcionamiento:
    - [Página principal (HTML)](https://danielcaldes.github.io/Micromecenazgo/web/index.html)
    - [Sitemap (XML)](https://danielcaldes.github.io/Micromecenazgo/web/sitemap.xml)
 
+## Capturas de pantalla
+
+Aquí puedes ver cómo se visualiza la web en diferentes dispositivos:
+
+### Versión de escritorio
+<img src="src/WebScreenShoot.png" alt="Captura de pantalla - PC" width="600">
+
+### Versión móvil
+<img src="src/MobileScreenShoot.png" alt="Captura de pantalla - Móvil" width="300">
+
 ## HTML
 Este proyecto está compuesto por una web dividida en tres páginas principales: **`index.html`**, **`fake-payment.html`** y **`fake-rewards.html`**. La estructura general de cada una de estas páginas sigue el siguiente esquema:
 
